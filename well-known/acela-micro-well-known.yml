@@ -1,0 +1,34 @@
+generated: '2026-09-06'
+method: probed
+source: >-
+  Direct HTTPS probes of the RFC 8615 well-known path list against every host this record
+  knows (acelamicro.com apex and www.acelamicro.com), 2026-09-06.
+hosts:
+- host: acelamicro.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+result: none
+notes: >-
+  Every probed path returned HTTP 404 from the origin's own XHTML error page — a real 404,
+  not an SPA catch-all and not a soft-200. No WellKnown or SecurityTxt pointer is wired into
+  apis.yml, because nothing was served: this file records a verified absence, not a presence.
+  One transient AWS WAF interstitial was observed on /.well-known/agent-card.json during the
+  first pass; a clean re-probe of that exact path returned 404, so no bot challenge is being
+  recorded as a wall. /robots.txt and /llms.txt also 404. Acela Micro is a fabless semiconductor
+  company with no developer program, so the absence of these documents is expected rather than
+  a gap in an otherwise developer-facing surface.

@@ -1,17 +1,38 @@
 aid: acela-micro
 name: Acela Micro
-description: 'Acela Micro is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Acela Micro (Suzhou Acela Microelectronics, founded 2013) is a Chinese fabless
+  semiconductor company designing high-end signal chain integrated circuits — ultra-high-speed
+  and high-precision analog-to-digital converters (ADC), digital-to-analog converters (DAC),
+  high-speed clock and wideband signal conditioning chips, and RF agile transceivers — plus
+  system-level validation platforms such as the AUV1302 wideband real-time validation board.
+  Its parts target 5G base stations, optical communications, test and measurement instrumentation,
+  high-speed data acquisition, broadband radar, security imaging and medical devices, and the
+  company positions itself around the domestic localization of high-performance data converters.
+  Headquartered in Suzhou Industrial Park with branches in Beijing, Chengdu, Wuhan and Shenzhen,
+  it holds 90+ invention patents across 80+ product families. The company sells silicon, datasheets
+  and reference hardware; it operates no developer program, publishes no public API, SDK or
+  machine-readable contract, and its Service and Support area distributes product manuals as PDFs.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/acela-micro/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enriched
 specificationVersion: '0.20'
 created: '2026-09-06'
 modified: '2026-09-06'
 tags:
 - Company
+- Semiconductors
+- Integrated Circuits
+- Analog to Digital Converters
+- Digital to Analog Converters
+- RF Transceivers
+- Signal Chain
+- Electronic Components
+- Hardware
+- China
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +40,36 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/acela-micro-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.acelamicro.com/en/
+- type: About
+  url: https://www.acelamicro.com/en/index.php?c=category&id=6
+x-enrichment:
+  date: '2026-09-06'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Acela Micro is a Suzhou fabless chip designer whose product is silicon — ADC/DAC converters,
+    clock chips and RF transceivers — so its entire Service & Support area distributes PDF product
+    manuals and datasheets, with no developer portal, no API, no SDK and no software download of
+    any kind on the site.
+  evidence:
+  - url: https://www.acelamicro.com/en/index.php?c=category&id=16
+    status: 200
+  - url: https://www.acelamicro.com/en/index.php?c=category&id=4
+    status: 200
+  - url: https://acelamicro.com/openapi.json
+    status: 404
+  - url: https://acelamicro.com/llms.txt
+    status: 404
+  - url: https://acelamicro.com/.well-known/agent-card.json
+    status: 404
+  - url: https://acelamicro.com/.well-known/api-catalog
+    status: 404
+  checked: '2026-09-06'
